@@ -12,10 +12,18 @@ fun main() {
     println("Bonificação da ${fran.nome}: ${fran.bonificacao()}")
 
     if(fran.autentica(12345)){
-        println("autenticou com sucesso")
+        println("Fran autenticou com sucesso")
     } else {
-        println("falha na autenticação")
+        println("falha na autenticação da Fran")
+    }
+
+    val gui = Diretor(nome="Gui", cpf="333.333.333.-34", salario=4000.0, senha= 4000, plr=200.0)
+    println("Nome: ${gui.nome} - CPF: ${gui.nome} - Salário: ${gui.salario}")
+    println("Bonificação da ${gui.nome}: ${gui.bonificacao()}")
+
+    if(gui.autentica(12345)){
+        println("Gui autenticou com sucesso")
+    } else {
+        println("falha na autenticação do Gui")
     }
 }
-
-
