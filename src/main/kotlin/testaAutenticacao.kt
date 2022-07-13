@@ -7,4 +7,5 @@ fun testaAutenticacao() {
     sistema.entra(diretora, 3000)
 
     val cliente = Cliente(nome="Gui", cpf="333.333.333.33", senha=1234)
+    sistema.entra(cliente, 1234)
 }
