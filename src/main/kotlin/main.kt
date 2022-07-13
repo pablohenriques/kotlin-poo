@@ -1,29 +1,27 @@
 fun main() {
     println("Bem vindo ao bytebank")
 
-    val alex = Funcionario("Alex", "111.111.111-12", salario = 1000.0)
+    val contaCorrente = ContaCorrente(titular = "Alex", numero = 1000)
+    val contaPoupanca = ContaPoupanca(titular = "Fran", numero = 1001)
 
-    println("Nome: ${alex.nome} - CPF: ${alex.nome} - Salário: ${alex.salario}")
-    println("Bonificação do ${alex.nome}: ${alex.bonificacao()}")
+    contaCorrente.deposita(1000.0)
+    contaPoupanca.deposita(1000.0)
 
-    val fran = Gerente("Fran", "222.222.222-23", salario = 2000.0, senha = 1234)
+    println("Deposita. Corrente: ${contaCorrente.saldo} - Poupança: ${contaPoupanca.saldo}")
 
-    println("Nome: ${fran.nome} - CPF: ${fran.nome} - Salário: ${fran.salario}")
-    println("Bonificação da ${fran.nome}: ${fran.bonificacao()}")
+    contaCorrente.saca(100.0)
+    contaPoupanca.saca(100.0)
 
-    if(fran.autentica(12345)){
-        println("Fran autenticou com sucesso")
-    } else {
-        println("falha na autenticação da Fran")
-    }
+    println("Saca. Corrente: ${contaCorrente.saldo} - Poupança: ${contaPoupanca.saldo}")
 
-    val gui = Diretor(nome="Gui", cpf="333.333.333.-34", salario=4000.0, senha= 4000, plr=200.0)
-    println("Nome: ${gui.nome} - CPF: ${gui.nome} - Salário: ${gui.salario}")
-    println("Bonificação da ${gui.nome}: ${gui.bonificacao()}")
+    contaCorrente.transfere(100.0, contaPoupanca)
 
-    if(gui.autentica(12345)){
-        println("Gui autenticou com sucesso")
-    } else {
-        println("falha na autenticação do Gui")
-    }
+    println("Tranfere. Corrente: ${contaCorrente.saldo} - Poupança: ${contaPoupanca.saldo}")
+
+    contaPoupanca.transfere(100.0, contaCorrente)
+
+    println("Tranfere. Corrente: ${contaCorrente.saldo} - Poupança: ${contaPoupanca.saldo}")
+
 }
+
+
