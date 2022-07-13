@@ -1,5 +1,5 @@
 fun testaFuncionarios() {
-    val alex = Funcionario("Alex", "111.111.111-12", salario = 1000.0)
+    val alex = Analista("Alex", "111.111.111-12", salario = 1000.0)
 
     println("Nome: ${alex.nome} - CPF: ${alex.nome} - Salário: ${alex.salario}")
     println("Bonificação do ${alex.nome}: ${alex.bonificacao()}")
